@@ -1,4 +1,5 @@
 import os
+import json
 from veryfi import Client
 from dotenv import load_dotenv
 #from pathlib import Path
@@ -19,41 +20,52 @@ if not all([client_id, client_secret, username, api_key]):
 else:
     print("Credentials loaded successfully")
     
-
 #Create client with the veryfi credentials
 veryfi_client = Client(client_id=client_id, client_secret=client_secret, username=username, api_key=api_key)
 
+def extract_information(response):
+    extracted_data = {}
 
-#---------------------------------------------------------------------------------------------------------------
+    # Extract vendor name
+    extracted_data['vendor_name'] = response['vendor']['name']
 
-def check_files_in_folder(folder_name):
-    # Get the directory path
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # Extract bill to information
+    bill_to = response['bill_to']
+    extracted_data['bill_to_name'] = bill_to['name']
+    extracted_data['bill_to_address'] = bill_to['address']
 
-    #folder path
-    folder_path = os.path.join(script_dir, folder_name)
+    # Extract ship to information
+    ship_to = response['ship_to']
+    extracted_data['ship_to_name'] = ship_to['name']
+    extracted_data['ship_to_address'] = ship_to['address']
 
-    # Check if the folder exists
-    if not os.path.exists(folder_path):
-        print(f"Folder '{folder_name}' does not exist.")
-        return
+    # Extract line items
+    line_items = response['line_items']
+    extracted_line_items = []
+    for line_item in line_items:
+        extracted_line_item = {
+            'quantity': line_item['quantity'],
+            'description': line_item['description'],
+            'price': line_item['total']
+        }
+        extracted_line_items.append(extracted_line_item)
 
-    # Get the list of files in the folder
-    files = os.listdir(folder_path)
+    extracted_data['line_items'] = extracted_line_items
 
-    # Check if there are files in the folder
-    if len(files) == 0:
-        print(f"No files found in the folder '{folder_name}'.")
-    else:
-        print(f"Files in the folder '{folder_name}':")
-        for file_name in files:
-            file_path = os.path.join(folder_path, file_name)
-            print(file_path)
+    return extracted_data
 
-# Specify the folder name
-folder_name = "docs"
+# Specify the file path of the document
+file_path = "docs/0001431487.jpg"
 
-# Check if there are files in the folder
-check_files_in_folder(folder_name)
+# Process the document using Veryfi API
+response = veryfi_client.process_document(file_path)
 
+# Extract the desired information
+extracted_information = extract_information(response)
 
+# Create a dictionary to store the extracted data
+output_data = {"documents": [extracted_information]}
+
+# Save the extracted information to a JSON file
+with open("output.json", "w") as outfile:
+    json.dump(output_data, outfile, indent=4)
