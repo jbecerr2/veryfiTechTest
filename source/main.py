@@ -17,7 +17,7 @@ def main():
     
     #Paths to each file and directory
     source_dir = os.path.dirname(os.path.abspath(__file__))
-    env_file = os.path.join(source_dir, "envfile.env")
+    env_file = os.path.join(source_dir, "..", "envfile.env")
     docs_directory = os.path.join(source_dir, "..", "docs")
     output_path = os.path.join(source_dir, "..", "output.json")
 
