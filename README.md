@@ -12,10 +12,12 @@ This project consist in a program that process documents from a directory using 
 
 For this program to work properly, is necesary to create an .env file containing your veryfi API credentials, the file should be as follows:
 
+```
 VERYFI_CLIENT_ID="your_client_id"
 VERYFI_CLIENT_SECRET="your_client_secret"
 VERYFI_USERNAME="your_username"
 VERYFI_API_KEY="your_api_key"
+```
 
 Is important that the file is named: envfile.env (I'll modify this later, but for now use this exact name)
 
