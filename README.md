@@ -39,7 +39,7 @@ Make sure the env file is located outside the source directory.
 docs_directory = os.path.join(source_dir, "new/path/here", "newdirectoryname")
 ```
 
--If you want to change the output file name or location, update the `output_path` variable in `main.py` as follows:
+- If you want to change the output file name or location, update the `output_path` variable in `main.py` as follows:
 
 ```python
 output_path = os.path.join(source_dir, "new/path/here", "newname.json")
