@@ -1,4 +1,4 @@
-# Veryfi Techcnical test for Data Acquisiton Specialist
+# Veryfi Technical test for Data Acquisiton Specialist
 
 This project consist in a program that process documents from a directory using the veryfi API, extract specific information from them and saves it in a JSON file.
 
