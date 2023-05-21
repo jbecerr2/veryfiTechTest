@@ -51,6 +51,37 @@ In the begginning of the project, I used `docReader.py` as the only file of the 
 learn better about how to use the API and finding a working solution as quickly as possible,
 But of course, the code is not entirely following good coding practices as it should be. So, after testing and studying this initial script, I decided to upgrade it into a better solution.
 
+### Assumptions
+
+- The env file should contain each one of the API credentials and be outside of the source directory.
+
+- Both `veryfi-python` and `python-dotenv` are installed and accessible to the Python interpreter.
+
+- The documents located in the `docs/` directory are in a format supported by the API (.jpg, .jpeg, .png, .gif, .pdf, .html, .heic, .heif, .avif).
+
+- Stable internet connection to communicate with the API.
+
+- The directory structure should be as follows: 
+
+```bash
+.
+└── veryfiTechTest
+    ├── docReader.py
+    ├── docs
+    │   ├── document_01
+    │   ├── document_02
+    │   ├── document_03
+    │   └── document_N
+    ├── envfile.env
+    ├── README.md
+    └── source
+        ├── credentials.py
+        ├── doc_processor.py
+        ├── extract_json.py
+        └── main.py
+
+```
+
 ### Coding practices and paradigms
 
 - #### Procedural and Functional Programming: 
@@ -72,6 +103,7 @@ In this case, I created 3 specific branches:
 - main: main default branch, here I started the project and push the main completed and functional project up to date.
 - dev: here in this branch, I focused on finding the solution to the test as quickly as I could.
 - optimize: in this branch, I focused on optimizing and polishing the initial solution to a more approachable and understandable solution using good coding practices.
+
 
 
 
