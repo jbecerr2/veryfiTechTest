@@ -1,4 +1,4 @@
-# Veryfi Techcnical test for DAta Aquisiton Specialist
+# Veryfi Techcnical test for Data Aquisiton Specialist
 
 This project consist in a program that process documents from a directory using the veryfi API, extract specific information from them and saves it in a JSON file.
 
@@ -69,7 +69,7 @@ here I decided to implement a little bit of error handling in `credentials.py` t
 In this case, I created 3 specific branches:
 - main: main default branch, here I started the project and push the main completed and functional project up to date.
 - dev: here in this branch, I focused on finding the solution to the test as quickly as I could.
-- optimize: in this branch, I focused on optimizing and polishing the initial solution to a more approachable and understandable solution.
+- optimize: in this branch, I focused on optimizing and polishing the initial solution to a more approachable and understandable solution using good coding practices.
 
 
 
