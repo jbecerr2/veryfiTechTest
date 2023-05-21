@@ -65,9 +65,9 @@ Since is common sense to NEVER write ANY credentials or secrets into the code it
 This helps to keep sensitive information a little bit more safe and easy to configure.
 
 - #### Error handling: 
-here I decided to implement a little bit of error handling in `credentials.py` to validate the API credentials.
+Here I decided to implement a little bit of error handling in `credentials.py` to validate the API credentials.
 
-- #### Version Control:
+### Version Control:
 In this case, I created 3 specific branches:
 - main: main default branch, here I started the project and push the main completed and functional project up to date.
 - dev: here in this branch, I focused on finding the solution to the test as quickly as I could.
