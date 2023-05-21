@@ -21,7 +21,7 @@ VERYFI_API_KEY="your_api_key"
 
 Is important that the file is named: envfile.env (I'll modify this later, but for now use this exact name)
 
-You can obtain this credentials creating an OCR API account in [veryfi] (https://app.veryfi.com)
+You can obtain this credentials creating an OCR API account in [veryfi](https://app.veryfi.com)
 
 Make sure the env file is located outside the source directory.
 
