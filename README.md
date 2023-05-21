@@ -4,9 +4,9 @@ This project consist in a program that process documents from a directory using 
 
 ## Dependencies & Requirements
 
--Python version: 3.x
--veryfi-python library (`pip install veryfi-python`)
--python-env library (`pip install python-dotenv`)
+- Python version: 3.x
+- veryfi-python library (`pip install veryfi-python`)
+- python-env library (`pip install python-dotenv`)
 
 ### Important information regarding the veryfi API
 
