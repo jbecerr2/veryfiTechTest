@@ -1,5 +1,5 @@
 """
-This module loads the API credentials from the environment file, checks if they're corerectly loaded, and returns them once the function is called
+This module loads the API credentials from the environment file, checks if they're correctly loaded, and returns them once the function is called
 """
 import os
 from dotenv import load_dotenv
